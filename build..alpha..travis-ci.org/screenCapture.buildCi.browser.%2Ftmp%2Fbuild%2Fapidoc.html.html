@@ -1,0 +1,832 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>winston-cloudwatch (v1.11.3)</a>
+</h1>
+<h4>Send logs to Amazon Cloudwatch using Winston.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.winston-cloudwatch">module winston-cloudwatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.winston-cloudwatch">
+            function <span class="apidocSignatureSpan"></span>winston-cloudwatch
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">winston-cloudwatch.</span>cloudwatch_integration</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">winston-cloudwatch.</span>super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">winston-cloudwatch.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.winston-cloudwatch.cloudwatch_integration">module winston-cloudwatch.cloudwatch_integration</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.ensureGroupPresent">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>ensureGroupPresent
+            <span class="apidocSignatureSpan">(aws, name, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.getStream">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>getStream
+            <span class="apidocSignatureSpan">(aws, groupName, streamName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.getToken">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>getToken
+            <span class="apidocSignatureSpan">(aws, groupName, streamName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.ignoreInProgress">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>ignoreInProgress
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.submitWithAnotherToken">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>submitWithAnotherToken
+            <span class="apidocSignatureSpan">(aws, groupName, streamName, payload, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.upload">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>upload
+            <span class="apidocSignatureSpan">(aws, groupName, streamName, logEvents, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.winston-cloudwatch.super_">module winston-cloudwatch.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_.super_">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.winston-cloudwatch.super_.prototype">module winston-cloudwatch.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_.prototype.formatQuery">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>formatQuery
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_.prototype.formatResults">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>formatResults
+            <span class="apidocSignatureSpan">(results, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_.prototype.logException">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>logException
+            <span class="apidocSignatureSpan">(msg, meta, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.super_.prototype.normalizeQuery">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>normalizeQuery
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.winston-cloudwatch.utils">module winston-cloudwatch.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.utils.debug">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.utils.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.winston-cloudwatch.utils.stringify">
+            function <span class="apidocSignatureSpan">winston-cloudwatch.utils.</span>stringify
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.winston-cloudwatch" id="apidoc.module.winston-cloudwatch">module winston-cloudwatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.winston-cloudwatch" id="apidoc.element.winston-cloudwatch.winston-cloudwatch">
+        function <span class="apidocSignatureSpan"></span>winston-cloudwatch
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">winston-cloudwatch = function (options) {
+  winston.Transport.call(this, options);
+  this.level = options.level || 'info';
+  this.name = options.name || 'CloudWatch';
+  this.logGroupName = options.logGroupName;
+  this.logStreamName = options.logStreamName;
+
+  var awsAccessKeyId = options.awsAccessKeyId;
+  var awsSecretKey = options.awsSecretKey;
+  var awsRegion = options.awsRegion;
+  var messageFormatter = options.messageFormatter ? options.messageFormatter : function(log) {
+    return _.isEmpty(log.meta) ?
+      [ log.level, log.msg ].join(' - ') :
+      [ log.level, log.msg, stringify(log.meta) ].join(' - ');
+  };
+  this.formatMessage = options.jsonMessage ? stringify : messageFormatter;
+  var proxyServer = this.proxyServer = options.proxyServer;
+  this.uploadRate = options.uploadRate || 2000;
+  this.logEvents = [];
+  this.errorHandler = options.errorHandler;
+
+  if (this.proxyServer) {
+    AWS.config.update({
+      httpOptions: {
+        agent: require('proxy-agent')(this.proxyServer)
+      }
+    });
+  }
+
+  var config = {};
+
+  if (awsAccessKeyId &amp;&amp; awsSecretKey &amp;&amp; awsRegion) {
+    config = { accessKeyId: awsAccessKeyId, secretAccessKey: awsSecretKey, region: awsRegion };
+  } else if (awsRegion &amp;&amp; !awsAccessKeyId &amp;&amp; !awsSecretKey) {
+    // Amazon SDK will automatically pull access credentials
+    // from IAM Role when running on EC2 but region still
+    // needs to be configured
+    config = { region: awsRegion };
+  }
+
+  if(options.awsOptions){
+    config = _.assign(config, options.awsOptions);
+  }
+
+  this.cloudwatchlogs = new AWS.CloudWatchLogs(config);
+
+  debug('constructor finished');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_" id="apidoc.element.winston-cloudwatch.super_">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (options) {
+  events.EventEmitter.call(this);
+
+  options        = options        || {};
+  this.silent    = options.silent || false;
+  this.raw       = options.raw    || false;
+  this.name      = options.name   || this.name;
+  this.formatter = options.formatter;
+
+  //
+  // Do not set a default level. When `level` is falsey on any
+  // `Transport` instance, any `Logger` instance uses the
+  // configured level (instead of the Transport level)
+  //
+  this.level = options.level;
+
+  this.handleExceptions = options.handleExceptions || false;
+  this.exceptionsLevel  = options.exceptionsLevel || 'error';
+  this.humanReadableUnhandledException = options.humanReadableUnhandledException || false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.winston-cloudwatch.cloudwatch_integration" id="apidoc.module.winston-cloudwatch.cloudwatch_integration">module winston-cloudwatch.cloudwatch_integration</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.ensureGroupPresent" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.ensureGroupPresent">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>ensureGroupPresent
+        <span class="apidocSignatureSpan">(aws, name, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ensureGroupPresent(aws, name, cb) {
+  debug('ensure group present');
+  var params = { logGroupName: name };
+  aws.describeLogStreams(params, function(err, data) {
+    // TODO we should cb(err, false) if there's an error?
+    if (err &amp;&amp; err.code == 'ResourceNotFoundException') {
+      debug('create group');
+      return aws.createLogGroup(params, lib.ignoreInProgress(function(err) {
+        cb(err, err ? false : true);
+      }));
+    } else {
+      cb(err, true);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.getStream" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.getStream">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>getStream
+        <span class="apidocSignatureSpan">(aws, groupName, streamName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getStream(aws, groupName, streamName, cb) {
+  var params = {
+    logGroupName: groupName,
+    logStreamNamePrefix: streamName
+  };
+
+  aws.describeLogStreams(params, function(err, data) {
+    debug('ensure stream present');
+    if (err) return cb(err);
+
+    var stream = _.find(data.logStreams, function(stream) {
+      return stream.logStreamName === streamName;
+    });
+
+    if (!stream) {
+      debug('create stream');
+      aws.createLogStream({
+        logGroupName: groupName,
+        logStreamName: streamName
+      }, lib.ignoreInProgress(function(err) {
+        if (err) return cb(err);
+        getStream(aws, groupName, streamName, cb);
+      }));
+    } else {
+      cb(null, stream);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.getToken" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.getToken">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>getToken
+        <span class="apidocSignatureSpan">(aws, groupName, streamName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getToken = function (aws, groupName, streamName, cb) {
+  async.series([
+    lib.ensureGroupPresent.bind(null, aws, groupName),
+    lib.getStream.bind(null, aws, groupName, streamName)
+  ], function(err, resources) {
+    var groupPresent = resources[0],
+        stream = resources[1];
+    if (groupPresent &amp;&amp; stream) {
+      debug('token found', stream.uploadSequenceToken);
+      cb(err, stream.uploadSequenceToken);
+    } else {
+      debug('token not found', err);
+      cb(err);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // called at 0s and 1.1s, each time with a single event, and upload() is called
+  // at 1.0s and 2.0s, with the same logEvents array, but calls to getToken()
+  // take 1.5s to return. When the first call to getToken() DOES return,
+  // it will send both events and empty the array. Then, when the second call
+  // go getToken() returns, without this check also here, it would attempt to send
+  // an empty array, resulting in the InvalidParameterException.
+  function safeUpload(cb) {
+    lib.<span class="apidocCodeKeywordSpan">getToken</span>(aws, groupName, streamName, function(err, token) {
+
+if (err) {
+  debug('error getting token', err, true);
+  return cb(err);
+}
+
+var entryIndex = 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.ignoreInProgress" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.ignoreInProgress">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>ignoreInProgress
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ignoreInProgress(cb) {
+  return function(err, data) {
+    if (err &amp;&amp; (err.code == 'OperationAbortedException' ||
+                err.code == 'ResourceAlreadyExistsException')) {
+      debug('ignore operation in progress', err.message);
+      cb(null, data);
+    } else {
+      cb(err, data);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lib.ensureGroupPresent = function ensureGroupPresent(aws, name, cb) {
+  debug('ensure group present');
+  var params = { logGroupName: name };
+  aws.describeLogStreams(params, function(err, data) {
+    // TODO we should cb(err, false) if there's an error?
+    if (err &amp;&amp; err.code == 'ResourceNotFoundException') {
+      debug('create group');
+      return aws.createLogGroup(params, lib.<span class="apidocCodeKeywordSpan">ignoreInProgress</span>(function(err) {
+        cb(err, err ? false : true);
+      }));
+    } else {
+      cb(err, true);
+    }
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.submitWithAnotherToken" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.submitWithAnotherToken">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>submitWithAnotherToken
+        <span class="apidocSignatureSpan">(aws, groupName, streamName, payload, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">submitWithAnotherToken = function (aws, groupName, streamName, payload, cb) {
+  lib.getToken(aws, groupName, streamName, function(err, token) {
+    payload.sequenceToken = token;
+    aws.putLogEvents(payload, function(err) {
+      lib._postingEvents = false;
+      cb(err)
+    });
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+lib._postingEvents = true;
+debug('send to aws');
+aws.putLogEvents(payload, function(err) {
+  if (err) {
+    if (err.code === 'InvalidSequenceTokenException') {
+      debug('InvalidSequenceTokenException, retrying', true)
+      lib.<span class="apidocCodeKeywordSpan">submitWithAnotherToken</span>(aws, groupName, streamName, payload, cb)
+    } else {
+      debug('error during putLogEvents', err, true)
+      retrySubmit(aws, payload, 3, cb)
+    }
+  } else  {
+    lib._postingEvents = false;
+    cb()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.cloudwatch_integration.upload" id="apidoc.element.winston-cloudwatch.cloudwatch_integration.upload">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.cloudwatch_integration.</span>upload
+        <span class="apidocSignatureSpan">(aws, groupName, streamName, logEvents, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (aws, groupName, streamName, logEvents, cb) {
+  debug('upload', logEvents);
+
+  // trying to send a batch before the last completed
+  // would cause InvalidSequenceTokenException.
+  if (lib._postingEvents || logEvents.length &lt;= 0) {
+    debug('nothing to do or already doing something');
+    return cb();
+  }
+
+  lib._postingEvents = true;
+  safeUpload(function(err) {
+    lib._postingEvents = false;
+    return cb(err);
+  });
+
+  // safeUpload introduced after https://github.com/lazywithclass/winston-cloudwatch/issues/55
+  // Note that calls to upload() can occur at a greater frequency
+  // than getToken() responses are processed. By way of example, consider if add() is
+  // called at 0s and 1.1s, each time with a single event, and upload() is called
+  // at 1.0s and 2.0s, with the same logEvents array, but calls to getToken()
+  // take 1.5s to return. When the first call to getToken() DOES return,
+  // it will send both events and empty the array. Then, when the second call
+  // go getToken() returns, without this check also here, it would attempt to send
+  // an empty array, resulting in the InvalidParameterException.
+  function safeUpload(cb) {
+    lib.getToken(aws, groupName, streamName, function(err, token) {
+
+      if (err) {
+        debug('error getting token', err, true);
+        return cb(err);
+      }
+
+      var entryIndex = 0;
+      var bytes = 0;
+      while (entryIndex &lt; logEvents.length &amp;&amp;
+             entryIndex &lt;= LIMITS.MAX_BATCH_SIZE_COUNT) {
+        var ev = logEvents[entryIndex];
+        // unit tests pass null elements
+        var evSize = ev ? Buffer.byteLength(ev.message, 'utf8') : 0;
+        if(evSize &gt; LIMITS.MAX_EVENT_MSG_SIZE_BYTES) {
+          evSize = LIMITS.MAX_EVENT_MSG_SIZE_BYTES;
+          ev.message = ev.message.substring(0, evSize);
+          const msgTooBigErr = new Error('Message Truncated because it exceeds the CloudWatch size limit');
+          msgTooBigErr.logEvent = ev;
+          cb(msgTooBigErr);
+        }
+        if (bytes + evSize &gt; LIMITS.MAX_BATCH_SIZE_BYTES) break;
+        bytes += evSize;
+        entryIndex++;
+      }
+
+      var payload = {
+        logGroupName: groupName,
+        logStreamName: streamName,
+        logEvents: logEvents.splice(0, entryIndex)
+      };
+      if (token) payload.sequenceToken = token;
+
+      lib._postingEvents = true;
+      debug('send to aws');
+      aws.putLogEvents(payload, function(err) {
+        if (err) {
+          if (err.code === 'InvalidSequenceTokenException') {
+            debug('InvalidSequenceTokenException, retrying', true)
+            lib.submitWithAnotherToken(aws, groupName, streamName, payload, cb)
+          } else {
+            debug('error during putLogEvents', err, true)
+            retrySubmit(aws, payload, 3, cb)
+          }
+        } else  {
+          lib._postingEvents = false;
+          cb()
+        }
+      });
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var streamName = typeof this.logStreamName === 'function' ?
+    this.logStreamName() : this.logStreamName;
+
+  if (_.isEmpty(this.logEvents)) {
+    return callback();
+  }
+
+  cloudWatchIntegration.<span class="apidocCodeKeywordSpan">upload</span>(
+    this.cloudwatchlogs,
+    groupName,
+    streamName,
+    this.logEvents,
+    callback
+  );
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.winston-cloudwatch.super_" id="apidoc.module.winston-cloudwatch.super_">module winston-cloudwatch.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_.super_" id="apidoc.element.winston-cloudwatch.super_.super_">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.winston-cloudwatch.super_.prototype" id="apidoc.module.winston-cloudwatch.super_.prototype">module winston-cloudwatch.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_.prototype.formatQuery" id="apidoc.element.winston-cloudwatch.super_.prototype.formatQuery">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>formatQuery
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatQuery = function (query) {
+  return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_.prototype.formatResults" id="apidoc.element.winston-cloudwatch.super_.prototype.formatResults">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>formatResults
+        <span class="apidocSignatureSpan">(results, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatResults = function (results, options) {
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_.prototype.logException" id="apidoc.element.winston-cloudwatch.super_.prototype.logException">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>logException
+        <span class="apidocSignatureSpan">(msg, meta, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logException = function (msg, meta, callback) {
+  var self = this,
+      called;
+
+  if (this.silent) {
+    return callback();
+  }
+
+  function onComplete () {
+    if (!called) {
+      called = true;
+      self.removeListener('logged', onComplete);
+      self.removeListener('error', onComplete);
+      callback();
+    }
+  }
+
+  this.once('logged', onComplete);
+  this.once('error', onComplete);
+  this.log(self.exceptionsLevel, msg, meta, function () { });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.super_.prototype.normalizeQuery" id="apidoc.element.winston-cloudwatch.super_.prototype.normalizeQuery">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.super_.prototype.</span>normalizeQuery
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizeQuery = function (options) {
+  //
+  // Use options similar to loggly.
+  // [See Loggly Search API](http://wiki.loggly.com/retrieve_events#optional)
+  //
+
+  options = options || {};
+
+  // limit
+  options.rows = options.rows || options.limit || 10;
+
+  // starting row offset
+  options.start = options.start || 0;
+
+  // now
+  options.until = options.until || new Date;
+  if (typeof options.until !== 'object') {
+    options.until = new Date(options.until);
+  }
+
+  // now - 24
+  options.from = options.from || (options.until - (24 * 60 * 60 * 1000));
+  if (typeof options.from !== 'object') {
+    options.from = new Date(options.from);
+  }
+
+
+  // 'asc' or 'desc'
+  options.order = options.order || 'desc';
+
+  // which fields to select
+  options.fields = options.fields;
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.winston-cloudwatch.utils" id="apidoc.module.winston-cloudwatch.utils">module winston-cloudwatch.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.utils.debug" id="apidoc.element.winston-cloudwatch.utils.debug">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.utils.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debug() {
+  if (!process.env.WINSTON_CLOUDWATCH_DEBUG) return;
+  var args = [].slice.call(arguments);
+  var lastParam = args.pop();
+  var color = chalk.red;
+  if (lastParam !== true) {
+    args.push(lastParam);
+    color = chalk.green;
+  }
+
+  args[0] = color(args[0]);
+  args.unshift(chalk.blue('DEBUG:'));
+  console.log.apply(console, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.winston-cloudwatch.utils.stringify" id="apidoc.element.winston-cloudwatch.utils.stringify">
+        function <span class="apidocSignatureSpan">winston-cloudwatch.utils.</span>stringify
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringify(o) { return JSON.stringify(o, null, '  '); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+var chalk = require('chalk');
+
+function stringify(o) { return JSON.<span class="apidocCodeKeywordSpan">stringify</span>(o, null, '  '); }
+
+function debug() {
+if (!process.env.WINSTON_CLOUDWATCH_DEBUG) return;
+var args = [].slice.call(arguments);
+var lastParam = args.pop();
+var color = chalk.red;
+if (lastParam !== true) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
